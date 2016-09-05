@@ -27,7 +27,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Animatable;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
-import android.view.animation.AccelerateDecelerateInterpolator;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.view.animation.Interpolator;
 
 /**
@@ -71,7 +71,7 @@ public class MarkerDrawable extends StateDrawable implements Animatable {
 
     public MarkerDrawable(@NonNull ColorStateList tintList, int closedSize) {
         super(tintList);
-        mInterpolator = new AccelerateDecelerateInterpolator();
+        mInterpolator = new FastOutSlowInInterpolator();
         mClosedStateSize = closedSize;
         mStartColor = tintList.getColorForState(new int[]{android.R.attr.state_enabled, android.R.attr.state_pressed}, tintList.getDefaultColor());
         mEndColor = tintList.getDefaultColor();

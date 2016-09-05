@@ -24,7 +24,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Animatable;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
-import android.view.animation.AccelerateDecelerateInterpolator;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.view.animation.Interpolator;
 
 public class AlmostRippleDrawable extends StateDrawable implements Animatable {
@@ -49,7 +49,7 @@ public class AlmostRippleDrawable extends StateDrawable implements Animatable {
 
     public AlmostRippleDrawable(@NonNull ColorStateList tintStateList) {
         super(tintStateList);
-        mInterpolator = new AccelerateDecelerateInterpolator();
+        mInterpolator = new FastOutSlowInInterpolator();
         setColor(tintStateList);
     }
 
